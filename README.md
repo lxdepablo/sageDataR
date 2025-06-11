@@ -68,6 +68,11 @@ Wraps the Python function `sage_data_client.query()`. Parameters:
 
 ---
 
+## Authorship
+All code was written and conceived by Luis X. de Pablo, with assistance from a large language model.
+
+---
+
 ## License
 
 GNU GPL v3.0
