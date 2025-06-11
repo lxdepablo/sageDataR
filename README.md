@@ -15,7 +15,7 @@ The data originates from live sensor deployments visible at:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("yourusername/sageDataR")
+devtools::install_github("lxdepablo/sageDataR")
 library(sageDataR)
 ```
 
