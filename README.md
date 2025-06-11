@@ -2,7 +2,7 @@
 
 `sageDataR` is an R interface to the [`sage-data-client`](https://pypi.org/project/sage-data-client/) Python package. It provides a function to query analysis-ready, real-time updated time series data from the [Sage Continuum](https://sagecontinuum.org/about) and [CROCUS](https://crocus-urban.org/) sensor networks directly in R.
 
-The data originates from live sensor deployments visible at:
+The data originate from live sensor deployments visible at:
 
 - [Sage Data Portal](https://portal.sagecontinuum.org/nodes)
 - [CROCUS Data Portal](https://crocus.sagecontinuum.org/nodes)
@@ -69,6 +69,7 @@ Wraps the Python function `sage_data_client.query()`. Parameters:
 ---
 
 ## Authorship
+
 All code was written and conceived by Luis X. de Pablo, with assistance from a large language model.
 
 ---
