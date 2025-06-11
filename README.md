@@ -1,46 +1,33 @@
 # sageDataR
 
-`sageDataR` is an R interface to the [`sage-data-client`](https://pypi.org/project/sage-data-client/) Python package. It provides a streamlined way to query time series sensor data from the [Sage](https://sagecontinuum.org/about) cyberinfrastructure directly in R using `reticulate`.
+`sageDataR` is an R interface to the [`sage-data-client`](https://pypi.org/project/sage-data-client/) Python package. It provides a streamlined way to query real-time updated time series data from the [Sage](https://sagecontinuum.org/about) cyberinfrastructure directly in R.
 
 The data originates from live sensor deployments visible at:
 
-- 🌐 [Sage Data Portal](https://portal.sagecontinuum.org/nodes)
-- ❄️ [CROCUS Portal (Cold Regions)](https://crocus.sagecontinuum.org/nodes)
+- [Sage Data Portal](https://portal.sagecontinuum.org/nodes)
+- [CROCUS Data Portal](https://crocus.sagecontinuum.org/nodes)
 
 ---
 
-## 🔧 Installation
+## Installation
 
-### Step 1: Install the R package from GitHub
+### Install and load the R package from GitHub
 
 ```r
 # install.packages("devtools")
 devtools::install_github("yourusername/sageDataR")
-```
-
-### Step 2: Set up the Python environment (first time only)
-
-```r
 library(sageDataR)
-install_sage_client()
 ```
 
-This will:
-
-- Create a virtual environment named `r-sage-client`
-- Install the required Python dependency [`sage-data-client`](https://pypi.org/project/sage-data-client/)
-
----
-
-## 🚀 Example Usage
+## Example Usage
 
 ```r
 library(sageDataR)
 
-# Query temperature sensor data from the last hour
+# Query bird presence data from the last hour
 df <- query_sage_data(
   start = "-1h",
-  filter = list(name = "env.temperature")
+  filter = list(name = "env.detection.avian.*")
 )
 
 head(df)
@@ -48,22 +35,13 @@ head(df)
 
 ---
 
-## 🧠 Notes
+## Notes
 
-- You must have Python and `virtualenv` installed.
-- Only one Python environment can be active per R session. If you see:
-
-  ```
-  failed to initialize requested version of Python
-  ```
-
-  You need to restart R and reload the package.
-
-- This package uses `{reticulate}` to connect R with Python.
+- This package automatically handles the Python dependency. After loading the package, follow the setup instructions in the R console.
 
 ---
 
-## 🔍 Function Reference
+## Reference
 
 ### `install_sage_client(envname = "r-sage-client")`
 
@@ -75,7 +53,7 @@ Wraps the Python function `sage_data_client.query()`. Parameters:
 
 | Argument | Description |
 |----------|-------------|
-| `start`  | **Required.** Relative or absolute start timestamp (e.g., `"-1h"` or `"2024-05-01T00:00:00Z"`). |
+| `start`  | **Required.** Relative or absolute start timestamp (e.g., `"-1h"` or `"2024-05-01 00:00:00"`). |
 | `end`    | Optional. End timestamp. |
 | `filter` | Optional. A named list of filters, e.g., `list(name = "env.temperature")`. |
 | `head`   | Optional. Return earliest N records per series. |
@@ -83,7 +61,7 @@ Wraps the Python function `sage_data_client.query()`. Parameters:
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [Sage Project Overview](https://sagecontinuum.org/about)
 - [Sage Data Portal](https://portal.sagecontinuum.org/nodes)
@@ -92,6 +70,6 @@ Wraps the Python function `sage_data_client.query()`. Parameters:
 
 ---
 
-## 📄 License
+## License
 
-MIT © Your Name
+pending
