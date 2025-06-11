@@ -1,0 +1,14 @@
+Package: sageDataR
+Title: R Wrapper for the Python Package 'sage-data-client'
+Version: 0.1.0
+Authors@R:
+    person("Luis X.", "de Pablo", , "luis.depablo@colorado.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "000000"))
+Description: Provides an R wrapper to query Sage Continuum and Crocus data using the 'sage-data-client' Python package.
+Depends: R (>= 3.6)
+Imports:
+  reticulate
+License: `use_gpl3_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
